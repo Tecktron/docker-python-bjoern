@@ -108,6 +108,18 @@ Pass the host and port separately as `BJOERN_HOST` and/or `BJOERN_PORT`. If the 
 docker run -d -p 80:8080 -e BJOERN_PORT=8080 myimage
 ```
 
+#### Other
+
+##### `BJOERN_REUSEPORT`
+
+Bjoern supports enabling SO_REUSEPORT if available on the system and has been enabled by default in this image. In short, if an application has terminated for whatever reason, the system may still hold onto the port while it's clearing the buffer out. This blocks other applications including new instances of the same application from binding to it during this time (which can be a lengthy process, in some cases up to 2 min). Setting this flag when binding to the port allows other applications to bind to the port during this timeout period. While there is the possibility that it could cause strange behavior, those are _extremely_ rare. Generally speaking, ther perception is that enabling this behavior is a good thing at least with regard to performance. However, it should be noted that since this image is not using any kind of supervisor to restart the application if it crashes (this is usually best left to the cluster controller to just let it replace the pod), this image probably does not truly make use of it.
+
+To disable this behavior, send any value that is _not_ the string of `"true"` to disable it.
+
+```bash
+docker run -d -p 80:80 -e BJOERN_REUSEPORT="false" myimage
+```
+
 # Credits
 This dockerfile setup is based on https://github.com/tiangolo/meinheld-gunicorn-docker
 
