@@ -4,6 +4,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get clean && apt-get update && \
     apt-get -y install --no-install-recommends \
     gcc \
+    libc6-dev \
     libev-dev \
     && rm -rf /var/lib/apt/lists/*
 
