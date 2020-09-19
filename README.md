@@ -108,17 +108,6 @@ Pass the host and port separately as `BJOERN_HOST` and/or `BJOERN_PORT`. If the 
 docker run -d -p 80:8080 -e BJOERN_PORT=8080 myimage
 ```
 
-#### Other
-
-##### `BJOERN_REUSEPORT`
-
-Bjoern supports enabling SO_REUSEPORT if available. This is set to false by default, send a `false` value to disable it.
-
-```bash
-docker run -d -p 80:80 -e BJOERN_REUSEPORT="false" myimage
-```
-
-
 # Credits
 This dockerfile setup is based on https://github.com/tiangolo/meinheld-gunicorn-docker
 
