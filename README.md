@@ -1,7 +1,7 @@
-# Python bjoern Docker Container
+# Python Bjoern Docker Container
 
 A Docker container to run a WSGI Python application using
-[bjoern](https://github.com/jonashaag/bjoern). Images support python 3.6+ and are
+[Bjoern](https://github.com/jonashaag/bjoern). Images support python 3.6+ and are
 based on the [official python containers](https://hub.docker.com/_/python). The `-slim` versions are based on the similarly named python versions.
 
 [Pull from Docker Hub](https://hub.docker.com/r/tecktron/python-bjoern/)
@@ -36,14 +36,14 @@ All options can be set using environment variables. These can be passed either i
 -e flag to the docker call.
 
 ### Prestart Script
-If you need to run any startup commands before Waitress runs (an example might be running migrations) you can override the `prestart.sh` script. This script should live within the `/app` directory in the container. The image will automatically detect and run it before starting Waitress.
+If you need to run any startup commands before Bjoern runs (an example might be running migrations) you can override the `prestart.sh` script. This script should live within the `/app` directory in the container. The image will automatically detect and run it before starting Bjoern.
 
 
 ### Variables
 
 #### `MODULE_NAME`
 
-The Python "module" (file) to be imported by Waitress, this module would contain the actual application in a variable.
+The Python "module" (file) to be imported by Bjoern, this module would contain the actual application in a variable.
 
 By default:
 
@@ -83,7 +83,7 @@ docker run -d -p 80:80 -e VARIABLE_NAME="api" myimage
 
 #### `APP_MODULE`
 
-The string with the Python module and the variable name passed to Waitress.
+The string with the Python module and the variable name passed to Bjoern.
 
 By default, set based on the variables `MODULE_NAME` and `VARIABLE_NAME`:
 
