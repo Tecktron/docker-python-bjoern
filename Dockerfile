@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM python:3.9-slim
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get clean && apt-get update && \
