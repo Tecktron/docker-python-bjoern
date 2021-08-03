@@ -12,4 +12,4 @@ else
     echo "There is no script $PRE_START_PATH"
 fi
 
-exec python /run.py
+python -u /run.py
