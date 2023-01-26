@@ -5,6 +5,7 @@ RUN apt-get clean && apt-get update && \
     apt-get -y install --no-install-recommends \
     gcc \
     libev-dev \
+    libc6-dev \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install pip bjoern --upgrade
