@@ -1,8 +1,11 @@
 # Python Bjoern Docker Container
 
 A Docker container to run a WSGI Python application using
-[Bjoern](https://github.com/jonashaag/bjoern). Images support python 3.6+ and are
+[Bjoern](https://github.com/jonashaag/bjoern). Images support python 3.11+ and are
 based on the [official python containers](https://hub.docker.com/_/python). The `-slim` versions are based on the similarly named python versions.
+
+Published tags (`linux/amd64` and `linux/arm64`, rebuilt weekly):
+`python-3.11`, `python-3.12`, `python-3.13`, `python-3.14`, `latest` (each also with a `-slim` variant).
 
 [Pull from Docker Hub](https://hub.docker.com/r/tecktron/python-bjoern/)
 
